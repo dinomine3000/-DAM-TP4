@@ -130,6 +130,32 @@ interface AIAssistant {
             """.trimIndent()
     }
 
+    suspend fun processSentimentInput(input: String): String {
+        val formattedPrompt = buildSentimentPrompt(input)
+        return apiCallWithBackoff(formattedPrompt)
+    }
+
+    fun buildSentimentPrompt(input: String): String {
+        return """
+            Evaluate the sentiment of the user's input on a 7-point scale as follows:
+            1. Very Negative
+            2. Negative
+            3. Slightly Negative
+            4. Neutral
+            5. Slightly Positive
+            6. Positive
+            7. Very Positive
+            
+            The answer should be the rating number and a justification, strictly in the following JSON format without any markdown blocks:
+            {
+                "rating": value ,
+                "justification": "value"
+            }
+            
+            The user's input is: "$input"
+            """.trimIndent()
+    }
+
     /**
      * Calls the Gemini API with an exponential backoff retry mechanism.
      * This method will automatically retry failed requests due to rate limiting (HTTP 429),
