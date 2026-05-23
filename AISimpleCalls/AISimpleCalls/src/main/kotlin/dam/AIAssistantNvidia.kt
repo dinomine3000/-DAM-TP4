@@ -50,7 +50,7 @@ class AIAssistantNvidia(override val properties: Properties) : AIAssistant {
             .put("model", model)
             .put("messages", messagesArray)
             .put("max_tokens", 512)
-            .put("temperature", 1.00)
+            .put("temperature", temperature)
             .put("top_p", 1.00)
             .put("frequency_penalty", 0.00)
             .put("presence_penalty", 0.00)

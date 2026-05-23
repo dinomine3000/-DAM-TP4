@@ -44,6 +44,10 @@ interface AIAssistant {
      * This property holds the identifier for the API key required to interact with external services.
      */
     val apiKeyName: String
+    val tempKeyName: String
+        get() = "TEMPERATURE"
+    val maxTokensKeyName: String
+        get() = "MAX_TOKENS"
 
     /**
      * The AI model being used
@@ -80,6 +84,11 @@ interface AIAssistant {
         get() = properties.getProperty(apiKeyName)
             ?: throw IllegalStateException("API key $apiKeyName not found in configuration file.")
 
+    val temperature: Double
+        get() = properties.getProperty(tempKeyName).toDoubleOrNull() ?: 1.0
+
+    val maxTokens: Int
+        get() = properties.getProperty(maxTokensKeyName)?.toIntOrNull() ?: 512
 
     /**
      * Returns the name/identifier of the system being used

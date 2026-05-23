@@ -22,6 +22,7 @@ class AIAssistantFactory {
                 "OPENAI-CLASSES" -> AIAssistantOpenAIClasses(properties)
                 "GEMINI-CLASSES" -> AIAssistantGeminiClasses(properties)
                 "NVIDIA" -> AIAssistantNvidia(properties)
+                "NVIDIA-CLASSES" -> AIAssistantNvidiaClasses(properties)
                 else -> throw IllegalArgumentException("Invalid AI model type specified in configuration. Valid values are 'OPENAI', 'GEMINI', 'OPENAI-CLASSES', or 'GEMINI-CLASSES'.")
             }
         }
