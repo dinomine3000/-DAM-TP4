@@ -72,7 +72,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         /// Initialize Realtime Database
-        db = Firebase.database
+        db = Firebase.database("https://dam-tp4-a-default-rtdb.europe-west1.firebasedatabase.app")
 
         val messagesRef = db.reference.child(MESSAGES_CHILD)
 
