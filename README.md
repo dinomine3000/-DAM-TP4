@@ -351,7 +351,7 @@ There were no such sections in this assignement.
 
 ## 12. Version Control and Commit History
 
-All project progression was continuously tracked using Git and hosted on GitHub under [https://github.com/dinomine3000/DAM-TP4](https://github.com/dinomine3000/DAM-TP4). Commits were partitioned logically based on completed milestones. The main focal points were:
+All project progression was continuously tracked using Git and hosted on GitHub under [https://github.com/dinomine3000/-DAM-TP4](https://github.com/dinomine3000/-DAM-TP4). Commits were partitioned logically based on completed milestones. The main focal points were:
  - Initial commits for each part;
  - Finished a section;
 
